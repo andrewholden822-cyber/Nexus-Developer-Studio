@@ -1,0 +1,6 @@
+{
+  "name": "Nexus Developer Studio",
+  "description": "A high-performance developer and creative engineering studio showcasing cutting-edge software products, technical case studies, interactive architecture estimators, and AI scoping tools.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
