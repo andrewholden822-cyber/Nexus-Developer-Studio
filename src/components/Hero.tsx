@@ -28,6 +28,15 @@ export const Hero: React.FC<HeroProps> = ({
       ],
     },
     {
+      cmd: 'nexus xbox publish --target=series-x-s --store=microsoft-partner-center',
+      output: [
+        '🎮 Initializing 4K 120Hz DirectX / UWP Xbox package build...',
+        '✔ Validating 10-foot Gamepad spatial focus navigation & TV safe zone...',
+        '✔ Authenticating Xbox Live SDK sandbox & Gamertag profile bindings...',
+        '🏆 Certified: Package passed automated Microsoft Store certification tests.',
+      ],
+    },
+    {
       cmd: 'nexus benchmark --concurrency=50000 --region=global',
       output: [
         '⚡ Running distributed load test across 12 edge clusters...',
@@ -80,7 +89,7 @@ export const Hero: React.FC<HeroProps> = ({
 
             {/* Description Subtext in Editorial Serif */}
             <p className="max-w-xl text-base sm:text-lg text-zinc-400 font-light leading-relaxed italic font-serif">
-              We build high-performance digital products, AI engines, and distributed architectures for startups and enterprises that demand precision, scale, and uncompromising aesthetic clarity.
+              We engineer high-performance web platforms, native Xbox apps &amp; Microsoft Store publishing, cross-platform mobile apps, and distributed AI systems with uncompromising aesthetic clarity.
             </p>
 
             {/* Quick Action CTAs */}

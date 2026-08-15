@@ -11,7 +11,7 @@ export const ProjectShowcase: React.FC<ProjectShowcaseProps> = ({ onOpenInquiryF
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
   const [activeProjectModal, setActiveProjectModal] = useState<Project | null>(null);
 
-  const categories = ['All', 'AI Systems', 'Cloud & Infra', 'FinTech', 'Web Platforms', 'Creative Dev'];
+  const categories = ['All', 'AI Systems', 'Cloud & Infra', 'Xbox & TV Ecosystem', 'FinTech', 'Web Platforms', 'Creative Dev'];
 
   const filteredProjects = selectedCategory === 'All'
     ? PROJECTS

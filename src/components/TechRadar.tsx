@@ -8,7 +8,7 @@ export const TechRadar: React.FC = () => {
   const [selectedRing, setSelectedRing] = useState<string>('All');
   const [searchQuery, setSearchQuery] = useState('');
 
-  const categories = ['All', 'Frontend', 'Backend & DB', 'AI & ML', 'DevOps & Cloud', 'Security'];
+  const categories = ['All', 'Frontend', 'Backend & DB', 'AI & ML', 'DevOps & Cloud', 'Xbox & Native', 'Security'];
   const rings = ['All', 'Core', 'Adopt', 'Trial', 'Assess'];
 
   const filteredTech = TECH_RADAR.filter((item) => {

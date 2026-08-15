@@ -2,7 +2,7 @@ export interface Project {
   id: string;
   title: string;
   client: string;
-  category: 'AI Systems' | 'Cloud & Infra' | 'Web Platforms' | 'FinTech' | 'Creative Dev';
+  category: 'AI Systems' | 'Cloud & Infra' | 'Web Platforms' | 'FinTech' | 'Creative Dev' | 'Xbox & TV Ecosystem';
   tagline: string;
   description: string;
   metrics: { label: string; value: string; detail: string }[];
@@ -33,7 +33,7 @@ export interface Service {
 
 export interface TechItem {
   name: string;
-  category: 'Frontend' | 'Backend & DB' | 'AI & ML' | 'DevOps & Cloud' | 'Security';
+  category: 'Frontend' | 'Backend & DB' | 'AI & ML' | 'DevOps & Cloud' | 'Security' | 'Xbox & Native';
   ring: 'Core' | 'Adopt' | 'Trial' | 'Assess';
   description: string;
   useCase: string;

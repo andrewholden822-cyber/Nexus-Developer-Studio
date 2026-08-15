@@ -151,13 +151,15 @@ You are context-aware and remember the entire conversation history.
 
 Studio Core Services:
 1. Web Development (React 19, TypeScript, Vite, Tailwind CSS v4, Next.js, Node.js, PostgreSQL)
-2. Mobile App Development (React Native, Expo, iOS Swift, Android Kotlin, Offline-first SQLite)
-3. UI/UX Design (Figma design tokens, WCAG AAA accessibility, Radix UI, Motion physics animations)
-4. Generative AI & Agentic Systems (Gemini 3.1 Flash-Lite, Gemini 3.7 Flash, RAG, pgvector)
-5. Cloud Infrastructure & DevOps (Docker, Kubernetes, GCP Cloud Run, Terraform, Cloudflare Workers)
-6. GitHub Codebase Audits, Architecture Modernization, & Performance Profiling
+2. Xbox App Development & Publishing (Native Xbox Series X|S & Xbox One, UWP, WinUI 3, React Native for Windows, DirectX, 10-foot Gamepad navigation, Xbox Live SDK, Microsoft Store publishing & certification)
+3. Mobile App Development (React Native, Expo, iOS Swift, Android Kotlin, Offline-first SQLite)
+4. UI/UX Design (Figma design tokens, WCAG AAA accessibility, Radix UI, Motion physics animations)
+5. Generative AI & Agentic Systems (Gemini 3.1 Flash-Lite, Gemini 3.7 Flash, RAG, pgvector)
+6. Cloud Infrastructure & DevOps (Docker, Kubernetes, GCP Cloud Run, Terraform, Cloudflare Workers)
+7. GitHub Codebase Audits, Architecture Modernization, & Performance Profiling
 
 Key Behaviors:
+- Xbox App Inquiries: When asked about Xbox apps, explain that NEXUS specializes in both full development (10-foot TV UI, Gamepad spatial focus, DirectX/UWP/React Native for Windows) and Microsoft Store publishing certification via Microsoft Partner Center.
 - Multi-step Bookings: When a user wants to scope a project or book a discovery call, guide them step-by-step (Service -> Requirements & Scale -> Timeline/Budget -> Contact Email -> Booking Confirmation Summary with Ticket ID).
 - Engineering Troubleshooting: When users ask about bugs, latency bottlenecks, memory leaks, or architectural dilemmas, provide sharp, direct, senior-engineer solutions with syntax-highlighted code blocks if relevant.
 - Tone: Crisp, technically authoritative, friendly, concise, zero fluff.`;
@@ -239,8 +241,10 @@ Key Behaviors:
     const lastUserMsg = messages[messages.length - 1]?.content || "";
     let reply = "Hello! I am NEXUS AI, your engineering assistant. ";
 
-    if (/book|consult|quote|hire|start|project/i.test(lastUserMsg)) {
-      reply += "I can help you scope your project and book a discovery session with our Principal Architects. Which area are you looking to build?\n\n1. **Web Development** (React 19 / Next.js / TypeScript)\n2. **Mobile App Development** (React Native / iOS & Android)\n3. **UI/UX Design Systems** (Figma / Accessibility / Motion)\n4. **Generative AI & Agentic Workflows** (Gemini / RAG)\n5. **Cloud Infra & DevOps** (Kubernetes / Cloud Run)\n\nPlease share your target timeline and core requirements!";
+    if (/xbox|console|gamepad|partner center|microsoft store/i.test(lastUserMsg)) {
+      reply += "We specialize in developing and publishing native **Xbox Series X|S and Xbox One** applications! Our expertise includes:\n\n- **10-Foot Spatial Gamepad Navigation** (XYFocus, thumbstick spatial navigation, TV safe zones)\n- **DirectX / WinUI 3 / UWP / React Native for Windows** architecture\n- **Xbox Live SDK & Gamertag Profile Integration**\n- **Microsoft Partner Center & Store Certification** submission management\n\nWould you like to scope an Xbox application or book a discovery session?";
+    } else if (/book|consult|quote|hire|start|project/i.test(lastUserMsg)) {
+      reply += "I can help you scope your project and book a discovery session with our Principal Architects. Which area are you looking to build?\n\n1. **Web Development** (React 19 / Next.js / TypeScript)\n2. **Xbox App Development & Publishing** (Series X|S / UWP / Store Certification)\n3. **Mobile App Development** (React Native / iOS & Android)\n4. **UI/UX Design Systems** (Figma / Accessibility / Motion)\n5. **Generative AI & Agentic Workflows** (Gemini / RAG)\n6. **Cloud Infra & DevOps** (Kubernetes / Cloud Run)\n\nPlease share your target timeline and core requirements!";
     } else if (/troubleshoot|bug|latency|slow|error|debug|issue|crash/i.test(lastUserMsg)) {
       reply += "Let's diagnose that technical issue. Please share:\n- The runtime or framework (e.g. Node.js, React 19, Postgres, Docker)\n- The error message or performance bottleneck metric\n- Current system load or p99 latency benchmarks\n\nOur engineering team will pinpoint the root cause!";
     } else if (/github|repo|code|audit|review/i.test(lastUserMsg)) {

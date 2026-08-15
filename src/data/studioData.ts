@@ -4,10 +4,44 @@ export const STUDIO_STATS = [
   { label: 'Uptime SLA Delivered', value: '99.99%', change: 'Across 38+ live systems' },
   { label: 'Avg API Response', value: '28ms', change: 'Global edge routing' },
   { label: 'Production Deploys', value: '1,400+', change: 'Zero-downtime standard' },
-  { label: 'Client Venture Capital', value: '$85M+', change: 'Raised by studio partners' },
+  { label: 'Xbox & Store Apps', value: '100% Certified', change: 'Published on Microsoft Store' },
 ];
 
 export const PROJECTS: Project[] = [
+  {
+    id: 'nexus-xbox-horizon',
+    title: 'Horizon Live — Xbox Series X|S App',
+    client: 'Vanguard Media & Gaming',
+    category: 'Xbox & TV Ecosystem',
+    tagline: 'Native 4K HDR Xbox Series X|S & Xbox One application with 10-foot Gamepad UX',
+    description: 'Architected, developed, and published a native 4K 120Hz Xbox application with spatial gamepad focus navigation, Xbox Live authentication, media streaming, and full Microsoft Store certification.',
+    metrics: [
+      { label: 'Display Output', value: '4K @ 120Hz', detail: 'Zero-drop HDR TV rendering' },
+      { label: 'Store Rating', value: '4.9 / 5.0', detail: 'Published on Microsoft Store' },
+      { label: 'Gamepad Input Latency', value: '< 8ms', detail: 'Spatial focus navigation engine' },
+    ],
+    techStack: ['Xbox Series X|S', 'Xbox One', 'UWP', 'WinUI / XAML', 'DirectX', 'React Native Windows', 'Xbox Live SDK', 'Microsoft Partner Center'],
+    year: '2025',
+    status: 'Featured',
+    featured: true,
+    architecture: {
+      overview: 'UWP & DirectX native rendering engine with decoupled background audio playback and Xbox Live telemetry pipeline.',
+      flow: [
+        'Xbox OS launches app into TV safe-zone viewport with HDR10 color space',
+        'Spatial Gamepad navigation engine intercepts Controller D-pad & Analog vectors',
+        'Xbox Live SDK authenticates Gamertag and retrieves cloud profile & presence',
+        'Stream decoding pipeline utilizes hardware-accelerated Media Foundation API',
+      ],
+      challenges: [
+        'Passing strict Microsoft Store Xbox App Certification guidelines & memory limits',
+        'Ensuring seamless directional D-pad and analog stick navigation without focus trap bugs',
+      ],
+      solutions: [
+        'Custom focus-management state machine adhering strictly to Microsoft 10-foot design guidelines',
+        'Zero-allocation frame buffers passing Xbox Memory and Background Execution certification tests',
+      ],
+    },
+  },
   {
     id: 'hyperscale-cloud',
     title: 'HyperScale Engine',
@@ -183,6 +217,21 @@ export const SERVICES: Service[] = [
     badge: 'Core Service',
   },
   {
+    id: 'xbox-app-development',
+    title: 'Xbox App Development & Publishing',
+    tagline: 'Native Xbox Series X|S & Xbox One apps, gamepad UX, and Microsoft Store publishing',
+    description: 'We architect, develop, and publish high-performance applications for the Xbox ecosystem (Xbox Series X|S and Xbox One) through the Microsoft Partner Center. From 10-foot TV UI ergonomics and spatial gamepad navigation to Xbox Live SDK authentication, DirectX rendering, and Microsoft Store certification compliance.',
+    iconName: 'Gamepad2',
+    deliverables: [
+      'Native Xbox Apps (UWP, WinUI 3, React Native for Windows & DirectX 12)',
+      '10-Foot Lean-Back TV Interface Design & Directional Gamepad Focus Navigation',
+      'Xbox Live Identity, Achievements, Cloud Save & Store In-App Purchases',
+      'End-to-End Microsoft Store Publishing, Submission & Content Certification'
+    ],
+    technologies: ['Xbox Series X|S', 'Xbox One', 'UWP / WinUI', 'React Native Windows', 'DirectX', 'Microsoft Partner Center', 'Xbox Live SDK'],
+    badge: 'Console Specialist',
+  },
+  {
     id: 'mobile-app-development',
     title: 'Mobile App Development',
     tagline: 'Cross-platform and native iOS & Android applications with 60fps fluidity',
@@ -237,11 +286,12 @@ export const SERVICES: Service[] = [
 export const TECH_RADAR: TechItem[] = [
   { name: 'TypeScript', category: 'Frontend', ring: 'Core', description: 'Strict end-to-end typing for zero-runtime bug confidence', useCase: 'Universal standard across all studio projects' },
   { name: 'React 19', category: 'Frontend', ring: 'Core', description: 'Concurrent rendering and modern server component architecture', useCase: 'High-density web apps and interactive dashboards' },
+  { name: 'Xbox UWP / WinUI', category: 'Frontend', ring: 'Core', description: 'Universal Windows Platform & XAML for 4K Xbox Series X|S apps', useCase: 'Xbox native applications and 10-foot TV experiences' },
   { name: 'Tailwind CSS v4', category: 'Frontend', ring: 'Core', description: 'Lightning-fast utility styling engine without bloat', useCase: 'Modern bespoke UI systems and responsive layouts' },
   { name: 'Motion (Framer)', category: 'Frontend', ring: 'Core', description: 'Declarative physics-based animation library', useCase: 'Micro-interactions and fluid screen transitions' },
   
   { name: 'Go (Golang)', category: 'Backend & DB', ring: 'Core', description: 'Ultra-low overhead microservices with lightweight concurrency', useCase: 'High-throughput API gateways and background workers' },
-  { name: 'Rust', category: 'Backend & DB', ring: 'Adopt', description: 'Memory-safe systems programming for deterministic compute', useCase: 'Financial ledgers, audio engines, and WebAssembly modules' },
+  { name: 'Rust & C++', category: 'Backend & DB', ring: 'Adopt', description: 'Memory-safe systems programming & native console pipelines', useCase: 'DirectX 12 pipelines, financial ledgers, and audio engines' },
   { name: 'PostgreSQL & pgvector', category: 'Backend & DB', ring: 'Core', description: 'The gold standard relational DB with AI vector search', useCase: 'Primary data storage and semantic retrieval' },
   { name: 'Redis / Valkey', category: 'Backend & DB', ring: 'Core', description: 'In-memory data grid and pub/sub message broker', useCase: 'Session cache, rate limiting, and real-time state' },
   
@@ -249,6 +299,7 @@ export const TECH_RADAR: TechItem[] = [
   { name: 'pgvector / HNSW', category: 'AI & ML', ring: 'Core', description: 'Hierarchical Navigable Small World vector search in Postgres', useCase: 'Enterprise RAG without spinning up extra SaaS silos' },
   { name: 'LangGraph / Agents', category: 'AI & ML', ring: 'Adopt', description: 'Stateful, cyclic multi-agent workflow orchestration', useCase: 'Autonomous business logic & code assistants' },
   
+  { name: 'Xbox Live & Partner Center', category: 'DevOps & Cloud', ring: 'Core', description: 'Microsoft Partner Center certification, store publishing & telemetry', useCase: 'Xbox app packaging, sandbox testing, and store certification' },
   { name: 'Docker & Kubernetes', category: 'DevOps & Cloud', ring: 'Core', description: 'Reproducible containerization and elastic scaling', useCase: 'Cloud-native zero-downtime deployment pipelines' },
   { name: 'Cloudflare Workers & Edge', category: 'DevOps & Cloud', ring: 'Core', description: 'Sub-10ms compute at the global network perimeter', useCase: 'Edge authentication, geo-routing, and smart caching' },
   { name: 'Terraform / OpenTofu', category: 'DevOps & Cloud', ring: 'Core', description: 'Declarative infrastructure as code', useCase: 'Reproducible multi-cloud provisioning' },
@@ -408,5 +459,42 @@ FROM document_embeddings
 WHERE tenant_id = $tenant_id
 ORDER BY embedding <=> $query_embedding
 LIMIT 8;`,
+  },
+  {
+    id: 'xbox-gamepad-focus',
+    title: 'Xbox 10-Foot Spatial Gamepad Navigation (C# / WinUI)',
+    language: 'csharp',
+    description: 'Hardware-accelerated directional XY-focus navigation and Xbox Controller input handler for 4K TV interfaces.',
+    code: `using Windows.Gaming.Input;
+using Microsoft.UI.Xaml.Input;
+
+public sealed partial class XboxMediaView : Page
+{
+    private Gamepad? _activeGamepad;
+
+    public XboxMediaView()
+    {
+        this.InitializeComponent();
+        // Enforce 10-foot TV Safe-Zone Margin
+        this.RequiresPointer = false;
+        XYFocusKeyboardNavigation = XYFocusKeyboardNavigationMode.Enabled;
+        
+        Gamepad.GamepadAdded += (s, e) => {
+            _activeGamepad = e;
+            DispatcherQueue.TryEnqueue(() => StatusBadge.Text = "Xbox Controller Connected");
+        };
+    }
+
+    private void OnDirectionalNavigation(object sender, KeyRoutedEventArgs e)
+    {
+        // Handle Gamepad D-Pad and Thumbstick directional vectors
+        if (e.Key == Windows.System.VirtualKey.GamepadDPadRight ||
+            e.Key == Windows.System.VirtualKey.GamepadLeftThumbstickRight)
+        {
+            FocusManager.TryMoveFocus(FocusNavigationDirection.Right);
+            e.Handled = true;
+        }
+    }
+}`,
   },
 ];

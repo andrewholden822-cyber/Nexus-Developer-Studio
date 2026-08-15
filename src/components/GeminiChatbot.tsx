@@ -27,8 +27,8 @@ interface GeminiChatbotProps {
 }
 
 const QUICK_PROMPTS = [
+  { label: 'Xbox App Publishing', prompt: 'What is the process and timeline to develop and publish an app on Xbox Series X|S and Xbox One via Microsoft Store?' },
   { label: 'Book Discovery Call', prompt: 'I would like to book a technical discovery consultation for a new project.' },
-  { label: 'Troubleshoot Latency', prompt: 'How do I optimize p99 latency in a high-throughput Node.js / React microservice?' },
   { label: 'Web Dev Scope', prompt: 'What is the standard architecture and timeline for a Web Development project?' },
   { label: 'Audit GitHub Repo', prompt: 'How does NEXUS analyze and audit GitHub repositories?' },
 ];
@@ -44,7 +44,7 @@ export const GeminiChatbot: React.FC<GeminiChatbotProps> = ({ onOpenInquiry, onO
     {
       id: 'welcome-1',
       role: 'model',
-      content: "Hello! I'm NEXUS AI, your studio solutions architect powered by Gemini 3.1 Flash-Lite for sub-150ms real-time responses. I can assist you with multi-step project booking, technical scoping, and code troubleshooting. What are you building today?",
+      content: "Hello! I'm NEXUS AI, your studio solutions architect powered by Gemini 3.1 Flash-Lite for sub-150ms real-time responses. I can assist you with web platforms, native Xbox app development & Microsoft Store publishing, cross-platform mobile apps, and technical scoping. What are you building today?",
       timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
       metadata: {
         model: 'gemini-3.1-flash-lite',

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { SERVICES } from '../data/studioData';
-import { Layers, Cpu, Server, Sparkles, Zap, Check, ArrowRight, Code2, Smartphone, Globe, Palette, ShieldCheck } from 'lucide-react';
+import { Layers, Cpu, Server, Sparkles, Zap, Check, ArrowRight, Code2, Smartphone, Globe, Palette, ShieldCheck, Gamepad2 } from 'lucide-react';
 
 interface ServicesSectionProps {
   onOpenInquiryForService: (serviceTitle: string) => void;
@@ -15,6 +15,8 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onOpenInquiryF
     switch (iconName) {
       case 'Layers':
         return <Layers className="w-5 h-5" />;
+      case 'Gamepad2':
+        return <Gamepad2 className="w-5 h-5" />;
       case 'Smartphone':
         return <Smartphone className="w-5 h-5" />;
       case 'Sparkles':
@@ -46,13 +48,13 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onOpenInquiryF
             Services & Core Practices
           </h2>
           <p className="mt-4 text-zinc-400 text-sm sm:text-base font-serif italic font-light leading-relaxed">
-            Specialized engineering squads delivering bespoke web development, high-performance mobile apps, and refined UI/UX design systems.
+            Specialized engineering squads delivering bespoke web development, native Xbox app development & Microsoft Store publishing, cross-platform mobile apps, and refined UI/UX design systems.
           </p>
         </div>
 
-        {/* Highlighted 3-Pillar Cards for Web Development, Mobile App Development, and UI/UX Design */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-          {SERVICES.slice(0, 3).map((service) => {
+        {/* Highlighted Cards for Web Development, Xbox Apps, Mobile App Development, and UI/UX */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+          {SERVICES.slice(0, 4).map((service) => {
             const isSelected = service.id === selectedServiceId;
             return (
               <div
@@ -74,16 +76,16 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onOpenInquiryF
                     </span>
                   </div>
 
-                  <h3 className="text-xl font-bold uppercase text-white tracking-tight mb-2">
+                  <h3 className="text-lg font-bold uppercase text-white tracking-tight mb-2">
                     {service.title}
                   </h3>
-                  <p className="text-xs text-zinc-400 font-light leading-relaxed mb-4">
+                  <p className="text-xs text-zinc-400 font-light leading-relaxed mb-4 line-clamp-3">
                     {service.description}
                   </p>
                 </div>
 
                 <div className="pt-4 border-t border-zinc-800/80 flex items-center justify-between text-xs font-mono">
-                  <span className="text-zinc-500 uppercase tracking-wider">{service.technologies.slice(0, 3).join(', ')}</span>
+                  <span className="text-zinc-500 uppercase tracking-wider text-[10px]">{service.technologies.slice(0, 2).join(', ')}</span>
                   <span className="text-white font-medium flex items-center gap-1 group-hover:translate-x-0.5 transition-transform">
                     Scope <ArrowRight className="w-3.5 h-3.5" />
                   </span>

@@ -21,7 +21,7 @@ export const InteractiveWorkbench: React.FC<InteractiveWorkbenchProps> = ({ onDi
   const [copiedBlueprint, setCopiedBlueprint] = useState(false);
 
   // Estimator Form State
-  const [estPlatform, setEstPlatform] = useState<'web' | 'ai' | 'cloud' | 'mobile'>('web');
+  const [estPlatform, setEstPlatform] = useState<'web' | 'xbox' | 'ai' | 'cloud' | 'mobile'>('web');
   const [estScale, setEstScale] = useState<'startup' | 'growth' | 'enterprise'>('growth');
   const [selectedModules, setSelectedModules] = useState<string[]>([
     'auth',
@@ -36,6 +36,12 @@ export const InteractiveWorkbench: React.FC<InteractiveWorkbenchProps> = ({ onDi
 
   // Preset prompts for AI Scoper
   const scoperPresets = [
+    {
+      title: 'Xbox Series X|S App & Publishing',
+      name: 'Vortex Live Xbox Experience',
+      type: 'Xbox App Development & Publishing',
+      req: 'Native 4K 120Hz Xbox Series X|S application with 10-foot TV spatial gamepad navigation, Xbox Live Gamertag auth, low-latency media streaming, and Microsoft Store certification.',
+    },
     {
       title: 'Generative AI Workspace',
       name: 'OmniAI Workflow Canvas',
@@ -109,6 +115,7 @@ export const InteractiveWorkbench: React.FC<InteractiveWorkbenchProps> = ({ onDi
     let baseWeeks = 4;
     let baseBudgetPerSprint = 9500; // 2-week sprint
 
+    if (estPlatform === 'xbox') baseWeeks += 3;
     if (estPlatform === 'ai') baseWeeks += 3;
     if (estPlatform === 'cloud') baseWeeks += 2;
     if (estPlatform === 'mobile') baseWeeks += 3;
@@ -251,6 +258,8 @@ export const InteractiveWorkbench: React.FC<InteractiveWorkbenchProps> = ({ onDi
                     className="w-full px-3 py-2.5 rounded-lg bg-zinc-950 border border-zinc-800 focus:border-zinc-500 focus:outline-none text-zinc-200"
                   >
                     <option>Full-Stack Web & AI Application</option>
+                    <option>Xbox App Development & Publishing</option>
+                    <option>Mobile App Development (iOS & Android)</option>
                     <option>Generative AI & Agentic System</option>
                     <option>FinTech & Distributed Systems</option>
                     <option>Cloud Infrastructure & High-QPS Ops</option>
@@ -438,12 +447,13 @@ export const InteractiveWorkbench: React.FC<InteractiveWorkbenchProps> = ({ onDi
                 <label className="text-xs font-mono text-zinc-400 uppercase tracking-wider block mb-2.5">
                   1. Core Architecture Type
                 </label>
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                <div className="grid grid-cols-2 sm:grid-cols-5 gap-2">
                   {[
                     { id: 'web', label: 'Full-Stack Web', desc: 'React 19 + Node' },
-                    { id: 'ai', label: 'AI / RAG Pipeline', desc: 'Gemini + Vector' },
+                    { id: 'xbox', label: 'Xbox App', desc: 'Series X|S & Store' },
+                    { id: 'mobile', label: 'Mobile App', desc: 'iOS & Android' },
+                    { id: 'ai', label: 'AI / RAG', desc: 'Gemini + Vector' },
                     { id: 'cloud', label: 'High-QPS Ops', desc: 'K8s + Edge Mesh' },
-                    { id: 'mobile', label: 'Mobile / PWA', desc: 'Cross-platform' },
                   ].map((item) => (
                     <button
                       key={item.id}
@@ -500,6 +510,8 @@ export const InteractiveWorkbench: React.FC<InteractiveWorkbenchProps> = ({ onDi
                     { id: 'auth', label: 'Auth0 / WebAuthn & RBAC' },
                     { id: 'realtime', label: 'WebSocket & Live Stream' },
                     { id: 'vector', label: 'pgvector / RAG Index' },
+                    { id: 'gamepad', label: '10-Foot Gamepad Navigation' },
+                    { id: 'xboxlive', label: 'Xbox Live & Store Cert' },
                     { id: 'billing', label: 'Stripe Billing Engine' },
                     { id: 'admin', label: 'Custom Admin Ops Portal' },
                     { id: 'soc2', label: 'SOC2 & Pen-Test Ready' },

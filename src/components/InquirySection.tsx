@@ -259,6 +259,7 @@ export const InquirySection: React.FC<InquirySectionProps> = ({ initialData }) =
                         className="w-full px-3.5 py-2.5 rounded-lg bg-zinc-950 border border-zinc-800 focus:border-zinc-500 focus:outline-none text-zinc-100"
                       >
                         <option>Web Development</option>
+                        <option>Xbox App Development & Publishing</option>
                         <option>Mobile App Development</option>
                         <option>UI/UX Design</option>
                         <option>Generative AI & Agents</option>
